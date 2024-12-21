@@ -3,11 +3,13 @@ import { Component, Signal } from '@angular/core';
 import { Product } from '../../models/product.model';
 import { CommonModule } from '@angular/common';
 import { ProductListServiceService } from '../../services/product-list-service/product-list-service.service';
+import { ImageLoaderComponent } from "../../../shared/components/image-loader/image-loader.component";
+import { ProductTileComponent } from "../product-tile/product-tile.component";
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ProductTileComponent],
   providers: [ProductListServiceService],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss'

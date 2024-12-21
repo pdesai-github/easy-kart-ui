@@ -1,0 +1,8 @@
+<div *ngIf="product" class="ek-card product-tile">
+    <app-image-loader [imageId]="product.image"></app-image-loader>
+    <div class="p-2">
+        <h5>{{ product.name }}</h5>
+        <p>{{ product.description }}</p>
+        <p>Price: ${{ product.price }}</p>
+    </div>
+</div>
