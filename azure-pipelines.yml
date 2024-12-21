@@ -64,4 +64,4 @@ stages:
         kubernetesServiceEndpoint: 'aks-service-conn'
         namespace: 'easy-kart'
         command: 'apply'
-        arguments: '-f services.yaml' 
+        arguments: '-f service.yaml' 
