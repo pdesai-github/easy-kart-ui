@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: easy-kart-ui
+  namespace: easy-kart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: easy-kart-ui #This should be same label
+  template:
+    metadata:
+      labels:
+        app: easy-kart-ui #This should be same label
+    spec:
+      containers:
+      - name: easy-kart-ui
+        image: pdesaidocker/easy-kart-ui:{{imageTag}}
+        ports:
+        - containerPort: 80 #port defined in image dockerfile
+       
