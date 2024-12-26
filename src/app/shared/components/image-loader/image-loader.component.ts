@@ -16,6 +16,9 @@ export class ImageLoaderComponent implements OnInit {
   imageUrl!: string;
   imageSrc: string | undefined;
 
+  @Input() height: string = '120px'; // Default height
+  @Input() width: string = '100px';  // Default width
+
   constructor(private httpClient:HttpClient) { 
    
   }

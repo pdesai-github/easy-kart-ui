@@ -1,4 +1,4 @@
 <div>
-    <img *ngIf="imageSrc" [src]="imageSrc" alt="Loaded Image" />
+    <img *ngIf="imageSrc" [src]="imageSrc" [style.height]="height" [style.width]="width" alt="Loaded Image" />
     <p *ngIf="!imageSrc">Loading image...</p>
 </div>
