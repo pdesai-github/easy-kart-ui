@@ -1,1 +1,35 @@
-<p>cart works!</p>
+<div class="border-bottom p-2">
+    <h2>Shopping Cart</h2>
+</div>
+<div class="cart-container d-flex flex-row" *ngIf="cart">
+
+    <div class="w-75">
+        <div *ngFor="let item of cart.items" class="cart-item">
+            <div class="p-2">
+                <app-image-loader [imageId]="item.product.image"></app-image-loader>
+            </div>
+            <div class="cart-item-details p-2">
+                <h3>{{item.product.name}}</h3>
+                <p>{{item.product.description}}</p>
+                <p>{{item.product.category}}</p>
+                <p class="price">Price: ${{item.product.price}}</p>
+                <p>Quantity: {{item.quantity}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-25">
+        <div class="cart-summary">
+            <h3>Cart Summary</h3>
+            <p>Total Price: ${{cart.price}}</p>
+            <button class="btn btn-primary w-100" (click)="checkout()"
+                style="background-color: #ffa41c;border-color: #ffa41c;">Proceed to Buy</button>
+
+        </div>
+    </div>
+
+    <!-- Item 1 -->
+
+
+
+</div>

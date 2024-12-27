@@ -5,11 +5,12 @@ import { ProductListServiceService } from '../../services/product-list-service/p
 import { CommonModule } from '@angular/common';
 import { Product } from '../../models/product.model';
 import { ImageLoaderComponent } from '../../../shared/components/image-loader/image-loader.component';
+import { ProductCartOptionsComponent } from "../product-cart-options/product-cart-options.component";
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CommonModule, ImageLoaderComponent],
+  imports: [CommonModule, ImageLoaderComponent, ProductCartOptionsComponent],
   providers: [ProductListServiceService],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss'

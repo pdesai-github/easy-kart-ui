@@ -1,0 +1,16 @@
+<div *ngIf="product">
+    <div class="p-1">
+        <h3>${{product.price}}</h3>
+    </div>
+    <div class="p-1 border-bottom">
+        <p>Free delivery by Tomorrow</p>
+    </div>
+    <div class="p-1">
+        <p>Sold by <b>PD Tech</b> </p>
+    </div>    
+    <div class="mt-2 w-100">
+        <button class="btn btn-primary w-100" (click)="addItemToCart(product, 1)" style="background-color: #ffa41c;border-color: #ffa41c;">Add
+            to
+            Cart</button>
+    </div>
+</div>

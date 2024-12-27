@@ -2,5 +2,6 @@ export const environment = {
     production: true,
     productapi: 'http://4.188.111.128/api/products',
     productDetailsApi: 'http://4.188.111.128/api/ProductDetails',
-    imageApiUrl: 'http://4.224.70.54/api/images/'
+    imageApiUrl: 'http://4.224.70.54/api/images/',
+    addCartUrl: 'http://4.213.45.124/api/Cart'
 };
