@@ -1,12 +1,12 @@
 <div class="p-2 border-bottom">
-    <h2>Your Orders</h2>
+    <h5>Your Orders</h5>
    
 </div>
 <div *ngFor="let order of orders" class="p-2 ek-card-full-width mt-3">
     <div class="d-flex flex-row">
         <div class="w-50">
             <div class="p-2 border-bottom">
-                <h5>Order ID: {{ order.id }}</h5>
+               <span> <p> <b>Order Id:</b></p></span><span>{{ order.id }}</span>
             </div>
             <div class="ms-2 mt-2"><p class="text-primary">Price: {{ order.price | currency }}</p></div>
             <div class="ms-2"><p> <b>Status:</b> {{ order.status }}</p></div>
