@@ -6,13 +6,19 @@
     </ng-template>
 
     <div *ngFor="let cat of categories">
-        <div class="p-2">
-            <h3>{{cat.name}}</h3>
+        <div class="p-1">
+            <h5>{{cat.name}}</h5>
         </div>
         <div>
             <div *ngIf="getProdcutsByCategory(cat.id).length; else noProducts" class="d-flex flex-row">
                 <div *ngFor="let product of getProdcutsByCategory(cat.id)">
-                    <app-product-tile [product]="product"></app-product-tile>
+                    <div *ngIf="cat.name === 'Laptop'">
+                        <app-product-tile [product]="product" [width]="'150px'"></app-product-tile>
+                    </div>
+                    <div *ngIf="cat.name !== 'Laptop'">
+                        <app-product-tile [product]="product"></app-product-tile>
+                    </div>
+                   
                 </div>
             </div>
         </div>

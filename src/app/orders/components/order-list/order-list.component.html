@@ -3,12 +3,19 @@
    
 </div>
 <div *ngFor="let order of orders" class="p-2 ek-card-full-width mt-3">
-    <h4>Order ID: {{ order.id }}</h4>
     <div class="d-flex flex-row">
-        <div class="ms-2"><p class="text-primary">Price: {{ order.price | currency }}</p></div>
-        <div class="ms-2"><p> <b>Status:</b> {{ order.status }}</p></div>
-        <div class="ms-2"><p> <b>Created On:</b> {{ order.createdDate | date:'short' }}</p></div>
+        <div class="w-50">
+            <div class="p-2 border-bottom">
+                <h5>Order ID: {{ order.id }}</h5>
+            </div>
+            <div class="ms-2 mt-2"><p class="text-primary">Price: {{ order.price | currency }}</p></div>
+            <div class="ms-2"><p> <b>Status:</b> {{ order.status }}</p></div>
+            <div class="ms-2"><p> <b>Created On:</b> {{ order.createdDate | date:'short' }}</p></div>
+        </div>
+        <div class="w-50">          
+            <app-order-items [order]="order"></app-order-items>
+        </div>
     </div>
-    <h4>Items:</h4>
-    <app-order-items [order]="order"></app-order-items>
+   
+   
 </div>

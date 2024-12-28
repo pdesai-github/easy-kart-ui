@@ -1,13 +1,12 @@
 <div *ngIf="product" class="ek-card product-tile">
-    <app-image-loader [imageId]="product.image"></app-image-loader>
+    <app-image-loader [width]="width" [height]="height" [imageId]="product.image"></app-image-loader>
     <div class="p-2">
         <a [routerLink]="['/products',product.id,product.category]">{{ product.name }}</a>
-        <p>{{ product.description }}</p>
-        <p>Price: ${{ product.price }}</p>
-        <div *ngIf="quantity" class="d-flex flex-row-reverse">
-            <div> 
-                <span class="badge rounded-pill bg-danger">{{quantity}}</span>
-            </div>
+       
+        <p class="mt-1"> <span> ${{ product.price }}</span>  <span *ngIf="quantity" class=" ms-2 badge rounded-pill bg-danger">{{quantity}}</span></p>
+      
+        <div *ngIf="!quantity">
+            <button class="btn btn-danger btn-sm" style="border-radius: 15px;" (click)="addItemToCart(product,1)">Add to Cart</button>
         </div>
     </div>
 </div>
