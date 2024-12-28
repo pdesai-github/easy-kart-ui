@@ -37,7 +37,20 @@ export class CartComponent {
     this.http.post(environment.orderApiUrl, this.cart).subscribe({
       next: (response: any) => {
         console.log(response);
+        this.emptyCart()
         this.router.navigate(['/orders']);
+      },
+      error: (error: any) => {
+        console.error(error);
+      }
+    });
+  }
+
+  emptyCart() {
+    this.http.delete(environment.addCartUrl + "/" + environment.tempUserId).subscribe({
+      next: (response: any) => {
+        console.log(response);
+        
       },
       error: (error: any) => {
         console.error(error);
