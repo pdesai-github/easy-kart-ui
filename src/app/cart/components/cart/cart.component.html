@@ -4,6 +4,9 @@
 <div class="cart-container d-flex flex-row" *ngIf="cart">
 
     <div class="w-75">
+        <div *ngIf="cart.items.length === 0" class="empty-cart-message">
+            <p>Your cart is empty.</p>
+        </div>
         <div *ngFor="let item of cart.items" class="cart-item">
             <div class="p-2">
                 <app-image-loader [imageId]="item.product.image"></app-image-loader>
@@ -19,7 +22,7 @@
     </div>
 
     <div class="w-25">
-        <div class="cart-summary">
+        <div *ngIf="cart.items.length !== 0" class="cart-summary">
             <h3>Cart Summary</h3>
             <p>Total Price: ${{cart.price}}</p>
             <button class="btn btn-primary w-100" (click)="checkout()"

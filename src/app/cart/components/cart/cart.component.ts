@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 import { CommonModule } from '@angular/common';
 import { ImageLoaderComponent } from '../../../shared/components/image-loader/image-loader.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -16,12 +17,12 @@ export class CartComponent {
 
   cart!:Cart;
 
-  constructor(private http:HttpClient){
+  constructor(private http:HttpClient, private router:Router) {
     this.getCart();
   }
 
   getCart(){
-    this.http.get<Cart>(environment.addCartUrl+"/d8e1c062-4d3e-4326-9f16-31b28f62a4c5").subscribe({
+    this.http.get<Cart>(environment.addCartUrl+"/"+environment.tempUserId).subscribe({
       next: (response: Cart) => {
         this.cart = response;
       },
@@ -33,6 +34,15 @@ export class CartComponent {
 
   checkout(){
     
+    this.http.post(environment.orderApiUrl, this.cart).subscribe({
+      next: (response: any) => {
+        console.log(response);
+        this.router.navigate(['/orders']);
+      },
+      error: (error: any) => {
+        console.error(error);
+      }
+    });
   }
 
 }
