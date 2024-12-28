@@ -9,10 +9,6 @@
         <div class="ms-2"><p> <b>Status:</b> {{ order.status }}</p></div>
         <div class="ms-2"><p> <b>Created On:</b> {{ order.createdDate | date:'short' }}</p></div>
     </div>
-    <!-- <h4>Items:</h4>
-    <ul>
-        <li *ngFor="let item of order.items">
-            <b> Product ID: </b>{{ item.productId }},  <b>Quantity:</b> {{ item.quantity }}
-        </li>
-    </ul> -->
+    <h4>Items:</h4>
+    <app-order-items [order]="order"></app-order-items>
 </div>

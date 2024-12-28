@@ -14,5 +14,6 @@ import { RouterModule } from '@angular/router';
 export class ProductTileComponent {
 
   @Input() product!: Product;
+  @Input() quantity!: number | undefined;
 
 }

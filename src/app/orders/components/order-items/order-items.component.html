@@ -1,0 +1,7 @@
+<div *ngIf="products" class="d-flex flex-row">
+    <div *ngFor="let product of products">
+        <app-product-tile [product]="product" [quantity]="getQuantity(product.id)"></app-product-tile>
+       
+       
+    </div>
+</div>
